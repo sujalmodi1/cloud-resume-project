@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", async () => {
   // Visitor Counter
   try {
-    const res = await fetch("http://localhost:7071/api/VisitorCounter");
+    const res = await fetch("/api/VisitorCounter");
     const data = await res.json();
     document.getElementById("visitorCount").textContent = `Visitor Count: ${data.count}`;
   } catch (err) {
