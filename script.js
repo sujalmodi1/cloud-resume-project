@@ -13,14 +13,14 @@ window.addEventListener("DOMContentLoaded", async () => {
     console.error("Visitor counter failed:", err);
   }
 
-  // Contact Form Submission (still using local API)
+  // Contact Form Submission
   document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const name = e.target.name.value;
     const email = e.target.email.value;
 
-    const res = await fetch('/api/SubmitForm', {  // ✅ also change this to relative URL
+    const res = await fetch('/api/SubmitForm', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email }),
